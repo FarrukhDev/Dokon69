@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+	<title></title><link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<section>
+		<div class="contentBx"> 
+			<div class="formaBx">
+				<h2>Login</h2>
+				<form action="" method="post">
+					{% csrf_token %}
+					<div class="inputBx">
+						<span>Username</span>
+						<input type="text" name="">
+					</div>
+					<div class="inputBx">
+						<span>Password</span>
+						<input type="password" name="">
+					</div>
+					<div class="remember">	
+						<label><input type="checkbox" name="">Remember me</label>
+					</div>
+					<div class="inputBx">
+						<input type="submit" value="Yuborish" name="">
+					</div>
+					<div class="inputBx">
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title> Responsiive Admin Dashboard | CodingLab </title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <!-- IconsCount CDN Link -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxl-python'></i>
+      <span class="logo_name">Admin Panel</span>
+    </div>
+      <div class="menu-items">
+            <ul class="nav-links">
+                <li><a href="{% url 'home' %}">
+                    <i class="uil uil-estate"></i>
+                    <span class="link-name">Savdo oynasi</span>
+                </a></li>
+                <li><a href="{% url 'mahsulotlar' %}">
+                    <i class="uil uil-files-landscapes"></i>
+                    <span class="link-name">Maxsulotlar</span>
+                </a></li>
+                <li><a href="{% url 'add_info' %}">
+                    <i class="uil uil-thumbs-up"></i>
+                    <span class="link-name">Nasiya va Qarzlar qo`shish</span>
+                </a></li>
+            </ul>
+            
+            <ul class="logout-mode">
+                <!-- <li><a href="#">
+                    <i class="uil uil-signout"></i>
+                    <span class="link-name">Logout</span>
+                </a></li>
+
+                <li class="mode">
+                    <a href="#">
+                        <i class="uil uil-moon"></i>
+                    <span class="link-name">Dark Mode</span>
+                </a>
+
+                <div class="mode-toggle">
+                  <span class="switch"></span>
+                </div>
+            </li> -->
+            </ul>
+        </div>
+  </div>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Qarzlar</span>
+      </div>
+      <div class="search-box">
+        <input type="text" placeholder="Qidirish...">
+        <i class='bx bx-search' ></i>
+      </div>
+      <!-- <div class="profile-details">
+        <img src="images/profile.jpg" alt="">
+        <span class="admin_name">Prem Shahi</span>
+        <i class='bx bx-chevron-down' ></i> -->
+      </div>
+    </nav>
+
+    <div class="home-content">
+      <div class="overview-boxes">
+<!--        <div class="box">-->
+<!--          <div class="right-side">-->
+<!--            <div class="box-topic">Qarzlar</div>-->
+<!--&lt;!&ndash;            {% for i in nasiya %}&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="number">{{ i.summasi }}</div>&ndash;&gt;-->
+<!--&lt;!&ndash;            {%endfor%}&ndash;&gt;-->
+<!--            <div class="indicator">-->
+<!--              <i class='bx bx-up-arrow-alt'></i>-->
+<!--              <span class="text">Up from yesterday</span>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <i class='bx bx-cart-alt cart'></i>-->
+<!--        </div>-->
+<!--        <div class="box">-->
+<!--          <div class="right-side">-->
+<!--            <div class="box-topic">Qarzlar</div>-->
+<!--            <div class="number">38,876</div>-->
+<!--            <div class="indicator">-->
+<!--              <i class='bx bx-up-arrow-alt'></i>-->
+<!--              <span class="text">Up from yesterday</span>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <i class='bx bxs-cart-add cart two' ></i>-->
+<!--        </div>-->
+<!--        <div class="box">-->
+<!--          <div class="right-side">-->
+<!--            <div class="box-topic">Nasiya</div>-->
+<!--            <div class="number">$12,876</div>-->
+<!--            <div class="indicator">-->
+<!--              <i class='bx bx-up-arrow-alt'></i>-->
+<!--              <span class="text">Up from yesterday</span>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <i class='bx bx-cart cart three' ></i>-->
+<!--        </div>-->
+<!--        <div class="box">-->
+<!--          <div class="right-side">-->
+<!--            <div class="box-topic">Nasiya</div>-->
+<!--            <div class="number">11,086</div>-->
+<!--            <div class="indicator">-->
+<!--              <i class='bx bx-down-arrow-alt down'></i>-->
+<!--              <span class="text">Down From Today</span>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <i class='bx bxs-cart-download cart four' ></i>-->
+<!--        </div>-->
+      </div>
+      <div class="sales-boxes">
+        <div class="recent-sales box">
+          <div class="title">Nasiyalar tahlili</div>
+            {% for i in nasiya %}
+          <div class="sales-details">
+            <ul class="details">
+              <li class="topic">Dokon nomi</li>
+              <li><a href="#">{{ i.dokon_nomi }}</a></li>
+            </ul>
+            <ul class="details">
+            <li class="topic">Maxsulot</li>
+            <li><a href="#">{{ i.tovar_nomi }}</a></li>
+          </ul>
+          <ul class="details">
+            <li class="topic">Hodim ismi</li>
+            <li><a href="#">{{ i.xodim_ismi }}</a></li>
+          </ul>
+          <ul class="details">
+            <li class="topic">Nasiya summasi</li>
+            <li><a href="#">{{ i.summasi }}</a></li>
+          </ul>
+          </div>
+            {%endfor%}
+<!--          <div class="button">-->
+<!--            <a href="#">See All</a>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="top-sales box">-->
+<!--          <div class="title">Eng Kop Sotilgan Maxsulotlar</div>-->
+<!--          <ul class="top-sales-details">-->
+<!--            <li>-->
+<!--            <a href="#">-->
+<!--              <img src="images/sunglasses.jpg" alt="">-->
+<!--              <span class="product">Vuitton Sunglasses</span>-->
+<!--            </a>-->
+<!--            <span class="price">$1107</span>-->
+<!--          </li>-->
+<!--          <li>-->
+<!--            <a href="#">-->
+<!--              <img src="images/jeans.jpg" alt="">-->
+<!--              <span class="product">Hourglass Jeans </span>-->
+<!--            </a>-->
+<!--            <span class="price">$1567</span>-->
+<!--          </li>-->
+<!--          <li>-->
+<!--            <a href="#">-->
+<!--              <img src="images/nike.jpg" alt="">-->
+<!--              <span class="product">Nike Sport Shoe</span>-->
+<!--            </a>-->
+<!--            <span class="price">$1234</span>-->
+<!--          </li>-->
+<!--          <li>-->
+<!--            <a href="#">-->
+<!--              <img src="images/scarves.jpg" alt="">-->
+<!--              <span class="product">Hermes Silk Scarves.</span>-->
+<!--            </a>-->
+<!--            <span class="price">$2312</span>-->
+<!--          </li>-->
+<!--          <li>-->
+<!--            <a href="#">-->
+<!--              <img src="images/blueBag.jpg" alt="">-->
+<!--              <span class="product">Succi Ladies Bag</span>-->
+<!--            </a>-->
+<!--            <span class="price">$1456</span>-->
+<!--          </li>-->
+<!--          <li>-->
+<!--            <a href="#">-->
+<!--              <img src="images/bag.jpg" alt="">-->
+<!--              <span class="product">Gucci Womens's Bags</span>-->
+<!--            </a>-->
+<!--            <span class="price">$2345</span>-->
+<!--          <li>-->
+<!--            <a href="#">-->
+<!--              <img src="images/addidas.jpg" alt="">-->
+<!--              <span class="product">Addidas Running Shoe</span>-->
+<!--            </a>-->
+<!--            <span class="price">$2345</span>-->
+<!--          </li>-->
+<!--<li>-->
+<!--            <a href="#">-->
+<!--              <img src="images/shirt.jpg" alt="">-->
+<!--              <span class="product">Bilack Wear's Shirt</span>-->
+<!--            </a>-->
+<!--            <span class="price">$1245</span>-->
+<!--          </li>-->
+<!--          </ul>-->
+<!--        </div>-->
+      </div>
+    </div>
+  </section>
+
+  <script>
+   let sidebar = document.querySelector(".sidebar");
+let sidebarBtn = document.querySelector(".sidebarBtn");
+sidebarBtn.onclick = function() {
+  sidebar.classList.toggle("active");
+  if(sidebar.classList.contains("active")){
+  sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+}else
+  sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+}
+ </script>
+
+</body>
+</html>

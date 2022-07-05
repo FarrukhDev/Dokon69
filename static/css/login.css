@@ -1,0 +1,131 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins',sans-serif;
+}
+body{
+	background: #40459f;
+}
+section{
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+}
+section .imgBx{
+	position: relative;
+	width: 50%;
+	height: 100%;
+}
+section .imgBx:before{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/*background: linear-gradient(225deg, #e91e63,#03a9f4);*/
+	z-index: 1;
+	mix-blend-mode: screen;
+}
+section .imgBx img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+section .contentBx{
+	display: flex;
+	background: #0A2558;
+	justify-content: center;
+	align-items: center;
+	width: 50%;
+	height: 100%;
+	z-index: 1;
+	margin: 0 auto;
+}
+section .contentBx .formaBx{
+	width: 50%;
+}
+section .contentBx .formaBx h2{
+	color: #fff;
+	font-weight: 600;
+	font-size: 1.5rem;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+	border-bottom: 4px solid #fff;
+	display: inline-block;
+	letter-spacing: 1px 
+}
+section .contentBx .formaBx .inputBx{
+	margin-bottom: 20px;
+}
+section .contentBx .formaBx .inputBx span{
+	font-size: 16px;
+	margin-bottom: 5px;
+	display: inline-block;
+	color: #fff;
+	font-weight: 300;
+	font-size: 16px;
+	letter-spacing: 1px;
+}
+section .contentBx .formaBx .inputBx input{
+	width: 100%;
+	padding: 10px 20px;
+	outline: none;
+	font-weight: 400px;
+	border: 1px solid #fff;
+	font-size: 16px;
+	letter-spacing: 1px;
+	color: #fff;
+	background: transparent;
+	border-radius: 30px;
+}
+section .contentBx .formaBx .inputBx input[type="submit"]{
+	background: #fff;
+	color: #000;
+	outline: none;
+	border: none;
+	font-weight: 500;
+	cursor: pointer;
+}
+section .contentBx .formaBx .inputBx input[type="submit"]:hover{
+	background: #fff;
+}
+
+section .contentBx .formaBx .inputBx p{
+	color: yellow;
+
+}
+section .contentBx .formaBx .inputBx a{
+	color: #fff;
+}
+
+section .contentBx .formaBx .remember{
+	color: #fff;
+}
+
+@media (max-width: 768px){
+	section .contentBx{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 450px;
+		z-index: 1;
+	}
+	section .contentBx .formaBx{
+		position: fixed;
+		width: 400px;
+		padding: 40px;
+		margin: 50px;
+	}
+	section .contentBx .formaBx h3{
+		color: #607d8b;
+		text-align: center;
+		margin: 30px 0 10px;
+		font-weight: 500;
+	}
+}
