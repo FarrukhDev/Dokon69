@@ -1899,7 +1899,7 @@ var mixin = require('./util/mixin');
 
 var defaults = module.exports = {
 
-    name: 'w3lssbmincart', //w3lssbmincart
+    name: 'w3lssbmincart',
 
     parent: (typeof document !== 'undefined') ? document.body : null,
 
@@ -1914,10 +1914,10 @@ var defaults = module.exports = {
     styles: '',
 
     strings: {
-        button: 'Sotish',
-        subtotal: 'Umumiy summa:',
-        discount: 'Chegirma:',
-        empty: 'Savatchangiz hozir bo`sh !'
+        button: 'Shop More',
+        subtotal: 'Subtotal:',
+        discount: 'Discount:',
+        empty: 'Your shopping cart is empty'
     }
 
 };
@@ -2418,11 +2418,11 @@ var currencies = {
 
 
 module.exports = function currency(amount, config) {
-    var code = config && config.currency  'USD',
+    var code = config && config.currency || 'USD',
         value = currencies[code],
-        before = value.before  '',
-        after = value.after  '',
-        length = value.length  2,
+        before = value.before || '',
+        after = value.after || '',
+        length = value.length || 2,
         showCode = value.code && config && config.showCode,
         result = amount;
 
@@ -2436,6 +2436,7 @@ module.exports = function currency(amount, config) {
 
     return result;
 };
+
 },{}],16:[function(require,module,exports){
 'use strict';
 

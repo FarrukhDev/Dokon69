@@ -138,13 +138,20 @@
           <div class="sales-details">
             <ul class="details">
               <li class="topic">Maxsulot nomi</li>
+<!--                <div class="cart cart box_1"> -->
+<!--        <form action="#" method="post" class="last"> -->
+<!--          <input type="hidden" name="cmd" value="_cart" />-->
+<!--          <input type="hidden" name="display" value="1" />-->
+<!--          <button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>-->
+<!--        </form>   -->
+<!--      </div>-->
                 <div class="w3lssbmincart">
                     <form action="#" method="post">
                         {% csrf_token %}
                         <input type="hidden" name="cmd" value="_cart" />
                         <input type="hidden" name="add" value="1" />
                         <input type="hidden" name="w3ls_item" value="{{ i.nomi }}" />
-                        <input type="hidden" name="amount" value="{{ i.sot_narxi }}" />
+                        <input type="hidden" name="amount" value="{{ i.sot_narxi }}SO`M" />
                         <button type="submit" class="w3ls-cart">{{ i.nomi }}</button>
                     </form>
                 </div>

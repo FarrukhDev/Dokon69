@@ -36,6 +36,8 @@ class MahsulotlarView(View):
     def get(self,request):
         m = Mahsulot.objects.all()
         return render(request,'maxsulotlar.html', {'mahsulotlar':m})
+    # def post(self,request):
+    #     return render(request,'maxsulotlar.html')
 
 class QarzlarView(View):
     def get(self,request):
