@@ -60,9 +60,12 @@
         <i class='bx bx-menu sidebarBtn'></i>
         <span class="dashboard">Qarzlar</span>
       </div>
-      <div class="search-box">
-        <input type="text" placeholder="Qidirish...">
-        <i class='bx bx-search' ></i>
+        <div class="search-box">
+          <form class="search-form" action="{% url 'search_results' %}" method="get">
+              {% csrf_token %}
+            <input name="q" type="text" placeholder="Qidirish..." title="Search here">
+            <button class='bx bx-search' ></button>
+          </form>
       </div>
       <!-- <div class="profile-details">
         <img src="images/profile.jpg" alt="">
@@ -127,19 +130,19 @@
           <div class="sales-details">
             <ul class="details">
               <li class="topic">Dokon nomi</li>
-              <li><a href="#">{{ i.dokon_nomi }}</a></li>
+              <li><a href="/admin/mahsulotlar/nasiya/">{{ i.dokon_nomi }}</a></li>
             </ul>
             <ul class="details">
             <li class="topic">Maxsulot</li>
-            <li><a href="#">{{ i.tovar_nomi }}</a></li>
+            <li><a href="/admin/mahsulotlar/nasiya/">{{ i.tovar_nomi }}</a></li>
           </ul>
           <ul class="details">
             <li class="topic">Hodim ismi</li>
-            <li><a href="#">{{ i.xodim_ismi }}</a></li>
+            <li><a href="/admin/mahsulotlar/nasiya/">{{ i.xodim_ismi }}</a></li>
           </ul>
           <ul class="details">
             <li class="topic">Nasiya summasi</li>
-            <li><a href="#">{{ i.summasi }}</a></li>
+            <li><a href="/admin/mahsulotlar/nasiya/">{{ i.summasi }}</a></li>
           </ul>
           </div>
             {%endfor%}
@@ -222,6 +225,9 @@ sidebarBtn.onclick = function() {
   sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
 }
  </script>
-
+  <script>
+      const aaa = document.querySelector('.sbmincart-subtotal')
+        aaa.innerHTML = "Ummumiy Narx"
+  </script>
 </body>
 </html>

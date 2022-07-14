@@ -36,8 +36,12 @@ class MahsulotlarView(View):
     def get(self,request):
         m = Mahsulot.objects.all()
         return render(request,'maxsulotlar.html', {'mahsulotlar':m})
-    # def post(self,request):
-    #     return render(request,'maxsulotlar.html')
+    def post(self,request):
+        Statistika.objects.create(
+            umumiy_foyda=request.POST.get('umumiy_foyda'),
+
+        )
+        return render(request,'maxsulotlar.html')
 
 class QarzlarView(View):
     def get(self,request):

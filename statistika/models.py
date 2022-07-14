@@ -7,4 +7,4 @@ class Statistika(models.Model):
     bugungi_zarar = models.IntegerField(blank=True,null=True)
     soni = models.SmallIntegerField(blank=True,null=True)
     def __str__(self):
-        return self.umumiy_foyda
+        return f"{self.umumiy_foyda},{self.bugungi_foyda}"

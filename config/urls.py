@@ -1,7 +1,6 @@
 from django.contrib import admin
 from django.urls import path
 from mahsulotlar.views import *
-# from statistika.views import UyView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
