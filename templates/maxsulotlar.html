@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <title> Responsiive Admin Dashboard | CodingLab </title>
     <link rel="stylesheet" href="{% static 'css/копия.css '%}">
+      <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet">
+
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <!-- IconsCount CDN Link -->
@@ -124,6 +126,13 @@
           <i class='bx bxs-cart-download cart four' ></i>
         </div> -->
       </div>
+        <div class="cart cart box_1" style="background: blue; content:\eb54;">
+        <form action="#" method="post" class="last">
+          <input type="hidden" name="cmd" value="_cart" />
+          <input type="hidden" name="display" value="1" />
+          <button class="w3view-cart" type="submit" name="submit" value=""><ion-icon name="cart" style="width: 40px; height: 40px;background: white;"></ion-icon></button>
+        </form>
+      </div>
 <!--                <th style="color: black">Firma</th>-->
 <!--                <th style="color: black">Maxsulot</th>-->
 <!--                <th style="color: black">Qancha narxga keldi</th>-->
@@ -230,6 +239,8 @@
    sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
    }
  </script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 </body>
 </html>
