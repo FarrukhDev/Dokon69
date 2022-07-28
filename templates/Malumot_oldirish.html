@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title> Responsiive Admin Dashboard | CodingLab </title>
+    <link rel="stylesheet" href="{% static 'css/Malumot_Toldirish.css' %}">
+      <link rel="stylesheet" href="{% static 'css/копия.css '%}">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <!-- IconsCount CDN Link -->
+      <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet">
+<!--      <link href="{% static 'css/копия.css' %}" rel="stylesheet">-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="{% static 'js/jquery.min.js' %}"></script>
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class='bx bxl-python'></i>
+      <span class="logo_name">Maxsulotlar</span>
+    </div>
+      <div class="menu-items">
+            <ul class="nav-links">
+                <li><a href="index.html">
+                    <i class="uil uil-estate"></i>
+                    <span class="link-name">Savdo oynasi</span>
+                </a></li>
+                <li><a href="maxsulotlar.html">
+                    <i class="uil uil-files-landscapes"></i>
+                    <span class="link-name">Maxsulotlar</span>
+                </a></li>
+                <li><a href="qarzlar.html">
+                    <i class="uil uil-thumbs-up"></i>
+                    <span class="link-name">Nasiya va Qarzlar</span>
+                </a></li>
+            </ul>
+          <div class="cart cart box_1" style="background: blue; content:\eb54;">
+      </div>
+            <div class="w3lssbmincart">
+                    <form action="#" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="cmd" value="_cart" />
+                        <input type="hidden" name="add" value="1" />
+                        <input type="hidden" name="w3ls_item" value="{{ i.nomi }}" />
+                        <input type="hidden" name="amount" value="{{ i.sot_narxi }}SO`M" />
+                        <button type="submit" class="w3ls-cart">{{ i.nomi }}</button>
+                    </form>
+                </div>
+            <ul class="logout-mode">
+                <!-- <li><a href="#">
+                    <i class="uil uil-signout"></i>
+                    <span class="link-name">Logout</span>
+                </a></li>
+
+                <li class="mode">
+                    <a href="#">
+                        <i class="uil uil-moon"></i>
+                    <span class="link-name">Dark Mode</span>
+                </a>
+
+                <div class="mode-toggle">
+                  <span class="switch"></span>
+                </div>
+            </li> -->
+            </ul>
+        </div>
+  </div>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Statistika qoshish</span>
+      </div>
+      <!-- <div class="search-box">
+        <input type="text" placeholder="Qidirish...">
+        <i class='bx bx-search' ></i> -->
+      </div>
+      <!-- <div class="profile-details">
+        <img src="images/profile.jpg" alt="">
+        <span class="admin_name">Prem Shahi</span>
+        <i class='bx bx-chevron-down' ></i>
+      </div> -->
+    </nav>
+        <form action="#" method="post" class="last">
+            {% csrf_token %}
+          <input type="hidden" name="cmd" value="_cart" />
+          <input type="hidden" name="display" value="1" />
+          <button class="w3view-cart" type="submit" name="submit" value=""><ion-icon name="cart" style="width: 40px; height: 40px;background: white;"></ion-icon></button>
+        </form>
+    <div class="home-content">
+      <div class="overview-boxes">
+        <div class="box">
+          <div class="right-side">
+            <div class="box-topic">Umumiy Foyda</div>
+            <div class="number">{{umumiy.umumiy_foyda__sum}}</div>
+            <div class="indicator">
+<!--              <i class='bx bx-up-arrow-alt'></i>-->
+<!--              <span class="text">Up from yesterday</span>-->
+            </div>
+          </div>
+          <i class='bx bx-cart-alt cart'></i>
+        </div>
+        <div class="box">
+          <div class="right-side">
+            <div class="box-topic">Bugungi savdo</div>
+            <div class="number">{{b_savdo.bugungi_savdo__sum}}</div>
+            <div class="indicator">
+<!--              <i class='bx bx-up-arrow-alt'></i>-->
+<!--              <span class="text">Up from yesterday</span>-->
+            </div>
+          </div>
+          <i class='bx bxs-cart-add cart two' ></i>
+        </div>
+<!--        <div class="box">-->
+<!--          <div class="right-side">-->
+<!--            <div class="box-topic">Bugungi foyda</div>-->
+<!--            <div class="number"></div>-->
+<!--            <div class="indicator">-->
+<!--&lt;!&ndash;              <i class='bx bx-up-arrow-alt'></i>&ndash;&gt;-->
+<!--&lt;!&ndash;              <span class="text">Up from yesterday</span>&ndash;&gt;-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <i class='bx bx-cart cart three' ></i>-->
+<!--        </div>-->
+<!--        <div class="box">-->
+<!--          <div class="right-side">-->
+<!--            <div class="box-topic">Bugungi zarar</div>-->
+<!--            <div class="number">11,086</div>-->
+<!--            <div class="indicator">-->
+<!--&lt;!&ndash;              <i class='bx bx-down-arrow-alt down'></i>&ndash;&gt;-->
+<!--&lt;!&ndash;              <span class="text">Down From Today</span>&ndash;&gt;-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <i class='bx bxs-cart-download cart four' ></i>-->
+<!--        </div>-->
+<!--      </div>-->
+
+      <div class="container">
+      <div class="right-side">
+      <form action="" method="post">
+          {% csrf_token %}
+        <div class="input-box">
+          <input type="text" name="umumiy_foyda" placeholder="Umumiy summa">
+        </div>
+        <div class="input-box">
+          <input type="number" name="bugungi_savdo" placeholder="Bugungi savdo">
+        </div>
+<!--        <div class="input-box">-->
+<!--          <input type="text" placeholder="Maxsulot narxi">-->
+<!--        </div>-->
+        <!-- <div class="input-box">
+          <input type="text" placeholder="qoshimcha telefon raqamingiz">
+        </div> -->
+        
+        <div class="button">
+          <input class="int_button" type="submit" value="Saqlash" >
+        </div>
+      </form>
+    </div>
+    </div>
+  </div>
+      
+  </section>
+
+  <script>
+   let sidebar = document.querySelector(".sidebar");
+let sidebarBtn = document.querySelector(".sidebarBtn");
+sidebarBtn.onclick = function() {   
+  sidebar.classList.toggle("active");
+  if(sidebar.classList.contains("active")){
+  sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+}else
+  sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+}
+
+  function show(anything){
+    document.querySelector(".textBox").value = anything
+  }
+  let dropdown = document.querySelector('.dropdown');
+  dropdown.onclick = function(){
+    dropdown.classList.toggle('active');
+  }
+ </script>
+  <script src="{% static 'js/minicart.js' %}"></script>
+	<script>
+        w3ls.render();
+
+        w3ls.cart.on('w3sb_checkout', function (evt) {
+        	var items, len, i;
+
+        	if (this.subtotal() > 0) {
+        		items = this.items();
+
+        		for (i = 0, len = items.length; i < len; i++) {
+        		}
+        	}
+        });
+    </script>
+  <script>
+   let sidebar = document.querySelector(".sidebar");
+   let sidebarBtn = document.querySelector(".sidebarBtn");
+   sidebarBtn.onclick = function() {
+   sidebar.classList.toggle("active");
+   if(sidebar.classList.contains("active")){
+   sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+   }else
+   sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+   }
+ </script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script>
+    var csrftoken = '{{ csrf_token }}';
+</script>
+  <script src="{% static 'js/mover.js' %}"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

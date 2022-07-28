@@ -13,4 +13,5 @@ urlpatterns = [
     path("add_item/", MahsulotQoshView.as_view(), name="add_item"),
     path("add_info/", MalumotQoshView.as_view(), name="add_info"),
     path('stat/',UyView.as_view(),name = 'house'),
+    path('cart/',ShopCartView.as_view(),name = 'cart'),
 ]

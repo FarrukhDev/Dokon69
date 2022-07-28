@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'mahsulotlar',
     'statistika',
+    'django_forest',
 ]
 
 MIDDLEWARE = [

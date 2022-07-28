@@ -128,6 +128,7 @@
       </div>
         <div class="cart cart box_1" style="background: blue; content:\eb54;">
         <form action="#" method="post" class="last">
+            {% csrf_token %}
           <input type="hidden" name="cmd" value="_cart" />
           <input type="hidden" name="display" value="1" />
           <button class="w3view-cart" type="submit" name="submit" value=""><ion-icon name="cart" style="width: 40px; height: 40px;background: white;"></ion-icon></button>
@@ -239,8 +240,12 @@
    sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
    }
  </script>
+        <script src="{% static 'js/mover.js' %}"></script>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script>
+    var csrftoken = '{{ csrf_token }}';
+</script>
 
 </body>
 </html>

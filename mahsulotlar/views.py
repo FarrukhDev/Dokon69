@@ -3,7 +3,7 @@ from django.db.models import Q
 from django.shortcuts import render, redirect
 from django.views import View
 from django.views.generic import ListView
-
+from django.db.models import Sum
 from mahsulotlar.models import Mahsulot, Nasiya
 from statistika.models import Statistika
 
@@ -36,12 +36,6 @@ class MahsulotlarView(View):
     def get(self,request):
         m = Mahsulot.objects.all()
         return render(request,'maxsulotlar.html', {'mahsulotlar':m})
-    def post(self,request):
-        Statistika.objects.create(
-            umumiy_foyda=request.POST.get('umumiy_foyda'),
-
-        )
-        return render(request,'maxsulotlar.html')
 
 class QarzlarView(View):
     def get(self,request):
@@ -101,4 +95,19 @@ class MalumotQoshView(View):
             xodim_ismi = request.POST.get('xodim_ismi'),
         )
         return redirect('home')
+
+class ShopCartView(View):
+    def get(self,request):
+        f = Statistika.objects.aggregate(Sum('umumiy_foyda'))
+        b = Statistika.objects.aggregate(Sum('bugungi_savdo'))
+        return render(request,'Malumot_oldirish.html',{'umumiy':f,'b_savdo':b})
+
+    def post(self,request):
+        Statistika.objects.create(
+            umumiy_foyda=request.POST.get('umumiy_foyda'),
+            bugungi_savdo=request.POST.get('bugungi_savdo'),
+        )
+        return redirect('cart')
+
+
 

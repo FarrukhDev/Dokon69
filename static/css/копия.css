@@ -868,6 +868,8 @@ a.simpleCart_empty {
     vertical-align: middle;
 }
 /*-- //header --*/
+
+
 /*-- cart-css --*/
 #w3lssbmincart form {
     position: relative;
@@ -892,8 +894,8 @@ a.simpleCart_empty {
 #w3lssbmincart {
     display: none;
     position: fixed;
-    left: 68%;
-    top:16%;
+    left: 19%;
+    top: 16%;
 	width: 420px;
 }
 .sbmincart-showing #w3lssbmincart {
@@ -4804,12 +4806,21 @@ td.invert-image a img {
 		padding: .5em 1.9em;
 	}
 }
+
+
+
 @media (max-width:480px){
 	#w3lssbmincart {
 		left: 21%;
 		width: 338px;
-		top: 24.5%;
+		top: 69.5%;
 	}
+
+
+
+
+
+
 	#w3lssbmincart .sbmincart-closer {
 		margin: -15px -8px 0;
 		padding: 0 10px;
